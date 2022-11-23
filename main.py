@@ -25,8 +25,11 @@ class Example(QWidget):
         self.repaint()
 
     def draw_circle(self, qp):
-        qp.setBrush(QColor('yellow'))
-        qp.setPen(QColor('yellow'))
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        qp.setBrush(QColor(r, g, b))
+        qp.setPen(QColor(r, g, b))
         r = random.randint(1, min(self.width(), self.height() - self.btn.height()))
         x = random.randint(0, self.width() - r)
         y = random.randint(self.btn.height(), self.height() - r)
